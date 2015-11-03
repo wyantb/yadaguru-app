@@ -39,7 +39,7 @@ define(['app'], function(app) {
     ];
 
     $scope.generateDays = function() {
-      var month = $scope.data.summerCutoffMonth;
+      var month = $scope.data.summerCutOffMonth;
       var count;
       var days30 = [3, 5, 8, 10];
       if (month === 1) {

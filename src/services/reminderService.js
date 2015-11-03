@@ -35,7 +35,7 @@ define(['app'], function(app) {
      * @param {string} originKey - the timeframe key used to generate the sortdates
      * @param {date} date - a JavaScript date object representing the student-selected date
      */
-    reminderService.generateSortDates = function(data, originKey, date, summerCutoffDate) {
+    reminderService.generateSortDates = function(data, originKey, date, summerCutOffDate) {
       var getYear = function (currentDate, cutoff, offset) {
         offset = offset || 0;
         if (currentDate.getMonth() < cutoff) {
@@ -51,8 +51,8 @@ define(['app'], function(app) {
           d.sortDate = reminderService.calcDate(d[originKey], date);
         } else if (d[originKey] === 'summer') {
           year = getYear(currentDate, 2);
-          month = summerCutoffDate.month;
-          day = summerCutoffDate.day;
+          month = summerCutOffDate.month;
+          day = summerCutOffDate.day;
           d.sortDate = new Date(year, month, day).toISOString();
         } else if (d[originKey] === 'none') {
           d.sortDate = '0';

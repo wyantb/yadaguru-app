@@ -339,7 +339,7 @@ define(['app'], function(app) {
           testDateData = data.testDates,
           categoryData = data.categories,
           settings = data.settings[0],
-          summerDate = {'month': settings.summerCutoffMonth, 'day': settings.summerCutoffDay},
+          summerDate = {'month': settings.summerCutOffMonth, 'day': settings.summerCutOffDay},
           testMessageData = data.testMessages[0],
           testMessageCategory = Utils.lookup(categoryData, '_id', testMessageData.testCategory, 'categoryName'),
           allData,
