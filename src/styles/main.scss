@@ -20,6 +20,10 @@ $bootstrap-sm: 768px;
 $bootstrap-md: 992px;
 $bootstrap-lg: 1200px;
 
+html, body {
+  height: 100%;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -35,47 +39,55 @@ body {
   }
 }
 
-.page-header {
 
-  .small-logo {
-    width: $small-logo-width;
-  }
+.masthead {
+  width: 95%;
+  margin: 15px auto;
+  display: block;
+}
 
-  .large-logo {
-    display: none;
-  }
-
-  @media (min-width: $bootstrap-md) {
-
-    .large-logo {
-      max-width: 100%;
-      width: $large-logo-width;
-      display: inline;
-    }
-
-    .small-logo {
-      display: none;
-    }
-
+.standing-state {
+  img {
+    width: 85%;
+    margin: 120px auto;
+    display: block;
   }
 }
 
-.footer {
-  background-color: #f5f5f5;
-  padding: 20px 0 10px 0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  max-height: $small-footer-height;
+.main {
+  min-height: 75%;
+}
 
-  @media (min-width: $bootstrap-sm) {
-    max-height: $large-footer-height;
-
-    .small {
-      font-size: 85%;
-    }
+.start {
+  .instructions {
+    text-align: center;
+    font-size: 18px;
   }
+  .btn-step {
+    margin-top: 15px;
+  }
+  .radio {
+    font-size: 26px;
+    margin-left: 120px;
+  }
+
+}
+
+
+@media (min-width: $bootstrap-sm) {
+  .footer {
+    background-color: #f5f5f5;
+    padding: 20px 0 10px 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: $small-footer-height;
+  }
+}
+
+.full-height {
+  min-height: 80%;
 }
 
 .logo {
@@ -310,7 +322,7 @@ body {
   #reminderForms {
     display: none;
   }
- 
+
   .nav {
     display: none;
   }

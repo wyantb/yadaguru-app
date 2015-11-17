@@ -35,6 +35,7 @@ define(['app'], function() {
         var route = routeResolverProvider.route;
 
         $stateProvider // route.resolve(url, baseName, path, controllerAs, secure)
+          .state('start', route.resolve('/start', 'Start', 'start/', 'vm'))
           .state('home', route.resolve('/', 'Home', 'home/', 'vm'))
           .state('faqs', route.resolve('/faqs', 'Faqs', 'faqs/', 'vm'))
           .state('login', route.resolve('/login', 'Login', 'login/', 'vm'))
@@ -49,7 +50,7 @@ define(['app'], function() {
 
     app.run(['$rootScope', '$state', 'yg.services.identity', 'yg.services.notifier',
       function($rootScope, $state, identityService, notifierService) {
-        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
           if (toState.data && toState.data.access) {
             identityService.getCurrentUser().then(function() {
               if (!identityService.isAuthorized(toState.data.access)) {

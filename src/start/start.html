@@ -1,0 +1,83 @@
+<div class="container start">
+  <div class="row full-height">
+    <div class="col-xs-12">
+      <div class="step" ng-show="step === 1">
+        <div class="instructions">
+          <p>
+            Welcome to YadaGuru! We are a free app built by Civic Hackers.
+          </p>
+          <p>
+            YadaGuru helps you remember everything you have to do for your college applucations
+            and bugs you with texts to get it done!
+          </p>
+          <p>
+            To get started, enter the school's name.
+          </p>
+        </div>
+        <input type="text" id="schoolName" class="form-control"
+               ng-model="formData.schoolName" required
+               placeholder="Enter the name of the college/university"/>
+        <button class="btn btn-primary btn-step pull-right" ng-show="formData.schoolName"
+          ng-click="nextStep()">
+          Next <i class="fa fa-arrow-right"></i>
+        </button>
+      </div>
+      <div class="step" ng-show="step === 2">
+        <div class="instructions">
+          <p>
+            Next, get the application submission date from the school you're applying to.
+          </p>
+          <p>
+            TIP: You'll find this on the school's undergraduate admissions page.
+          </p>
+          <p>
+            Enter the school's submission date, and click 'Next'.
+          </p>
+        </div>
+        <p class="input-group">
+          <input type="text" class="form-control" datepicker-popup={{format}}
+                 ng-model="formData.submissionDate" is-open="opened" min-date="minDate"
+                 datepicker-options="dateOptions" required
+                 close-text="Close" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open($event)">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+          </span>
+        </p>
+        <button class="btn btn-primary btn-step pull-left" ng-click="prevStep()">
+          Back <i class="fa fa-arrow-left"></i>
+        </button>
+        <button class="btn btn-primary btn-step pull-right" ng-show="formData.submissionDate"
+          ng-click="nextStep()">
+          Next <i class="fa fa-arrow-right"></i>
+        </button>
+      </div>
+      <div class="step" ng-show="step === 3">
+        <div class="instructions">
+          <p>
+            One more question. Are you applying to an arts program?
+          </p>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" ng-value="false" ng-model="formData.isArtsMajor" checked>
+            No
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" ng-value="true" ng-model="formData.isArtsMajor">
+            Yes
+          </label>
+        </div>
+        <button class="btn btn-primary btn-step pull-left" ng-click="prevStep()">
+          Back <i class="fa fa-arrow-left"></i>
+        </button>
+        <button class="btn btn-primary btn-step pull-right" ng-click="nextStep()">
+          Next <i class="fa fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,15 +24,17 @@
 
     <div class="container">
       <div class="row">
-        <div class="page-header no-bottom-border col-sm-6 col-sm-offset-3" align="center">
+        <div class="col-sm-6 col-sm-offset-3">
           <img src="/assets/yg-masthead.png" alt="YadaGuru: College Application Reminders"
-               title="YadaGuru: College Application Reminders" class="large-logo">
-          <img src="/assets/yg-square.png" alt="YadaGuru: College Application Reminders"
-               title="YadaGuru: College Application Reminders" class="small-logo">
+               title="YadaGuru: College Application Reminders" class="masthead ng-cloak">
         </div>
       </div>
     </div>
-    <div ui-view></div>
+    <div class="standing-state" ng-show="false">
+      <img src="/assets/yg-square.png" alt="YadaGuru: College Application Reminders"
+           title="YadaGuru: College Application Reminders">
+    </div>
+    <div class="main" ui-view></div>
 
     <!-- Code for Philly Logo -->
     <footer class="footer">
